@@ -40,8 +40,8 @@ public class Saga implements ComponenteRockBuster{
         this.genero= genero;
         this.sinopsis= sinopsis;
         this.componentes= componentes;
-        this.setDuracion();
-        this.setPrecioDeRenta();
+        this.setDuracion(componentes);
+        this.setPrecioDeRenta(componentes);
     }
 
     /**
@@ -97,11 +97,11 @@ public class Saga implements ComponenteRockBuster{
      */
     public void mostrarInformacion(){
 
-        System.out.println(this.getNombre() + "\nGenero: " + this.getGenero() + "Director: " + this.getDirector());
+        System.out.println(this.getNombre() + "\nGenero: " + this.getGenero() + "\nDirector: " + this.getDirector());
         System.out.println("Contiene: ");
 
         for(ComponenteRockBuster componente: this.getComponentes()){
-            System.out.println(componente.getNombre());
+            System.out.println("*" + componente.getNombre());
         }
 
         System.out.println("Duración: " + this.getDuracion() + " min\n" + this.getSinopsis() + "\n$" + this.getPrecioDeRenta());
@@ -153,7 +153,7 @@ public class Saga implements ComponenteRockBuster{
      * @param componente un componente de tipo RockBuster.
      */
     public void agregar(ComponenteRockBuster componente){
-        this.getComponentes.add(componente);
+        this.getComponentes().add(componente);
     }
 
     /**
@@ -161,6 +161,6 @@ public class Saga implements ComponenteRockBuster{
      * @param componente un componente de tipo RockBuster.
      */
     public void remover(ComponenteRockBuster componente){
-        this.getComponentes.remove(componente); 
+        this.getComponentes().remove(componente); 
     }
 }
