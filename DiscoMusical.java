@@ -14,7 +14,7 @@ public class DiscoMusical {
     private String generoMusical;
 
     /** Anio del estreno del disco */
-    private int AnioDeEstreno;
+    private int anioDeEstreno;
 
     /** Precio de venta del disco */
     private double precioDeVenta;
@@ -24,14 +24,14 @@ public class DiscoMusical {
      * @param nombre nombre del disco
      * @param artista artista del disco
      * @param generoMusical genero musical del disco
-     * @param AnioDeEstreno anio de estrenos del disco
+     * @param anioDeEstreno anio de estrenos del disco
      * @param precioDeVenta precio de venta del disco
      */
     public DiscoMusical (String nombre, String artista, String generoMusical, int anioDeEstreno, double precioDeVenta){
         this.nombre = nombre;
         this.artista = artista;
         this.generoMusical = generoMusical;
-        this.AnioDeEstreno = anioDeEstreno;
+        this.anioDeEstreno = anioDeEstreno;
         this.precioDeVenta = precioDeVenta;
     }
 
@@ -52,7 +52,7 @@ public class DiscoMusical {
 
     /** @return el anio de estreno del disco. */
     public int getAnioDeEstreno() { 
-        return AnioDeEstreno;
+        return anioDeEstreno;
     }
 
     /** @return el precio de venta del disco. */
