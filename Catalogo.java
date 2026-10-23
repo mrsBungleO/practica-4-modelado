@@ -41,6 +41,27 @@ public class Catalogo{
         return encontrados;
     }
 
+    public ArrayList<String> getGenerosDisponibles(){
+        ArrayList<String> generos = new ArrayList<>();
+
+        for(ComponenteRockBuster producto: this.getProductos()){
+            String genero = producto.getGenero();
+            boolean yaEsta = false;
+
+            for(String existente: generos){
+                if(existente.equalsIgnoreCase(genero)){
+                    yaEsta = true;
+                }
+            }
+
+            if(!yaEsta){
+                generos.add(genero);
+            }
+        }
+
+        return generos;
+    }
+
     public void imprimirLista(ArrayList<ComponenteRockBuster> listaProductos){
         if(listaProductos.isEmpty()){
             System.out.println("No se encontraron productos.");
@@ -90,9 +111,22 @@ public class Catalogo{
         DiscoMusical disco2 = new DiscoMusical("Thriller", "Michael Jackson", "Pop", 1982, 14.50);
         DiscoMusical disco3 = new DiscoMusical("Back in Black", "AC/DC", "Rock", 1980, 13.75);
 
+        DiscoMusical disco4 = new DiscoMusical("Abbey Road", "The Beatles", "Rock", 1969, 16.50);
+        DiscoMusical disco5 = new DiscoMusical("Kind of Blue", "Miles Davis", "Jazz", 1959, 18.90);
+        DiscoMusical disco6 = new DiscoMusical("Nevermind", "Nirvana", "Grunge", 1991, 14.20);
+        DiscoMusical disco7 = new DiscoMusical("Random Access Memories", "Daft Punk", "Electronica", 2013, 19.99);
+        DiscoMusical disco8 = new DiscoMusical("Un Verano Sin Ti", "Bad Bunny", "Reggaeton", 2022, 17.80);
+        DiscoMusical disco9 = new DiscoMusical("Rumours", "Fleetwood Mac", "Pop", 1977, 15.30);
+
         this.agregarProducto(new DiscoAdapter(disco1));
         this.agregarProducto(new DiscoAdapter(disco2));
         this.agregarProducto(new DiscoAdapter(disco3));
+        this.agregarProducto(new DiscoAdapter(disco4));
+        this.agregarProducto(new DiscoAdapter(disco5));
+        this.agregarProducto(new DiscoAdapter(disco6));
+        this.agregarProducto(new DiscoAdapter(disco7));
+        this.agregarProducto(new DiscoAdapter(disco8));
+        this.agregarProducto(new DiscoAdapter(disco9));
     }
 
 }

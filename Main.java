@@ -8,7 +8,7 @@ public class Main{
         Catalogo catalogo = new Catalogo();
         Scanner lector = new Scanner(System.in);
 
-        System.out.println("\n_________ BIENVENIDO AL CATALOGO DE ROCKBUSTER _________\n");
+        System.out.println("\n-_-_-_-_- BIENVENIDO AL CATALOGO DE ROCKBUSTER -_-_-_-_-\n");
 
         boolean salir = false;
 
@@ -27,9 +27,14 @@ public class Main{
                     mostrarYSeleccionar(catalogo.getProductos(), lector);
                     break;
                 case 2:
-                    lector.nextLine();
-                    System.out.print("\n¿Que genero buscas? ");
-                    String genero = lector.nextLine().trim();
+                    ArrayList<String> generos = catalogo.getGenerosDisponibles();
+                    System.out.println("\nGeneros disponibles (peliculas, sagas y discos):");
+                    for(int i = 0; i < generos.size(); i++){
+                        System.out.println((i + 1) + ") " + generos.get(i));
+                    }
+                    System.out.print("Elige un genero (1-" + generos.size() + "): ");
+                    int numGenero = leerOpcion(lector, 1, generos.size());
+                    String genero = generos.get(numGenero - 1);
                     ArrayList<ComponenteRockBuster> porGenero = catalogo.filtrarPorGenero(genero);
                     mostrarYSeleccionar(porGenero, lector);
                     break;
