@@ -140,6 +140,7 @@ public class Catalogo{
         DiscoMusical disco7 = new DiscoMusical("Random Access Memories", "Daft Punk", "Electronica", 2013, 19.99);
         DiscoMusical disco8 = new DiscoMusical("Un Verano Sin Ti", "Bad Bunny", "Reggaeton", 2022, 17.80);
         DiscoMusical disco9 = new DiscoMusical("Rumours", "Fleetwood Mac", "Pop", 1977, 15.30);
+        DiscoMusical disco10 = new DiscoMusical("Right Place, Wrong Person", "RM", "Hip Hop", 2024, 18.50);
 
         this.agregarProducto(new DiscoAdapter(disco1));
         this.agregarProducto(new DiscoAdapter(disco2));
@@ -150,6 +151,7 @@ public class Catalogo{
         this.agregarProducto(new DiscoAdapter(disco7));
         this.agregarProducto(new DiscoAdapter(disco8));
         this.agregarProducto(new DiscoAdapter(disco9));
+        this.agregarProducto(new DiscoAdapter(disco10));
     }
 
 }

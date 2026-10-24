@@ -35,27 +35,42 @@ public class DiscoMusical {
         this.precioDeVenta = precioDeVenta;
     }
 
-     /** @return el nombre del disco. */
+     /** 
+      * Metodo que obtiene el nombre del disco
+      * @return el nombre del disco 
+      */
     public String getNombre() { 
         return nombre; 
     }
 
-    /** @return el artista del disco. */
+    /**
+     * Metodo que obtiene el artista del disco
+     *  @return el artista del disco. 
+     */
     public String getArtista() { 
         return artista; 
     }
 
-    /** @return el genero musical del disco. */
+    /** 
+     * Metodo que obtiene el genero musical
+     * @return el genero musical del disco. 
+     */
     public String getGeneroMusical() { 
         return generoMusical; 
     }
 
-    /** @return el anio de estreno del disco. */
+    /** 
+     * Metodo que obtiene el añio de estreno del disco
+     * @return el anio de estreno del disco. 
+     */
     public int getAnioDeEstreno() { 
         return anioDeEstreno;
     }
 
-    /** @return el precio de venta del disco. */
+    /** 
+     * Metodo que obtiene el precio de venta del disco
+     * @return el precio de venta del disco. 
+     */
     public double getPrecioDeVenta() { 
         return precioDeVenta; 
     }

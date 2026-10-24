@@ -15,43 +15,64 @@ public class DiscoAdapter implements ComponenteRockBuster{
         this.disco = disco;
     }
 
-     /** @return el nombre del disco */
+     /**
+      * Metodo que obtiene el nombre del disco
+      * @return el nombre del disco 
+      */
     @Override
     public String getNombre(){
         return disco.getNombre();
     }
 
-    /** @return el artista, que cumple el rol de director */
+    /**
+     * Metodo que obtiene al artista, que cumple el rol de director
+     * @return el artista, que cumple el rol de director 
+     */
     @Override
     public String getDirector(){
         return disco.getArtista();
     }
 
-      /** @return 0, porque los discos no tienen duracion registrada */
+      /** 
+       * Metodo que obtiene la duracion del disco
+       * @return 0, porque los discos no tienen duracion registrada 
+       */
     @Override
     public double getDuracion(){
         return 0;
     }
 
-    /** @return el genero musical del disco */
+    /**
+     * Metodo que obtiene el genero del disco
+     * @return el genero musical del disco 
+     * */
     @Override
     public String getGenero(){
         return disco.getGeneroMusical();
     }
 
-    /** @return una sinopsis armada con el artista y el anio de estreno */
+    /** 
+     * Metodo que obtiene la sinopsis del disco, armada con el artista
+     * y el anio de estreno
+     * @return una sinopsis armada con el artista y el anio de estreno 
+     */
     @Override
     public String getSinopsis(){
         return "Disco de " + disco.getArtista() + ", estrenado en " + disco.getAnioDeEstreno();
     }
 
-     /** @return el precio de venta del disco, usado como precio de renta */
+     /**
+      * Metodo que obtiene el precio del disco
+      * @return el precio de venta del disco
+      */
     @Override
     public double getPrecioDeRenta(){
         return disco.getPrecioDeVenta();
     }
 
-     /** Imprime la informacion completa del disco */
+     /** 
+      * Imprime la informacion completa del disco 
+      * */
     @Override
     public void mostrarInformacion(){
         System.out.println("Nombre: " + getNombre());
