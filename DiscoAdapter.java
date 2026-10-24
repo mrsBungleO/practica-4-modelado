@@ -42,7 +42,7 @@ public class DiscoAdapter implements ComponenteRockBuster{
     /** @return una sinopsis armada con el artista y el anio de estreno */
     @Override
     public String getSinopsis(){
-        return "Disco de " + disco.getArtista() + ", estrenando en " + disco.getAnioDeEstreno();
+        return "Disco de " + disco.getArtista() + ", estrenado en " + disco.getAnioDeEstreno();
     }
 
      /** @return el precio de venta del disco, usado como precio de renta */
@@ -55,10 +55,9 @@ public class DiscoAdapter implements ComponenteRockBuster{
     @Override
     public void mostrarInformacion(){
         System.out.println("Nombre: " + getNombre());
-        System.out.println("Director: " + getDirector());
-        System.out.println("Duracion: " + getDuracion());
+        System.out.println("Artista: " + getDirector());
         System.out.println("Genero: " + getGenero());
-        System.out.println("Sinopsis: " + getSinopsis());
+        System.out.println("Descripcion: " + getSinopsis());
         System.out.println("Precio de renta: $" + getPrecioDeRenta());
     }
     

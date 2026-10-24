@@ -82,6 +82,9 @@ public class Catalogo{
         Pelicula ep4 = new Pelicula("Star Wars Episodio IV: Una Nueva Esperanza", "George Lucas", 121, "Ciencia Ficcion", "Un joven granjero se une a la rebelion para enfrentar al Imperio.", 39.90);
         Pelicula ep5 = new Pelicula("Star Wars Episodio V: El Imperio Contraataca", "Irvin Kershner", 124, "Ciencia Ficcion", "La rebelion sufre sus peores derrotas mientras se revela un secreto familiar.", 39.90);
         Pelicula ep6 = new Pelicula("Star Wars Episodio VI: El Retorno del Jedi", "Richard Marquand", 131, "Ciencia Ficcion", "La batalla final entre la rebelion y el Imperio.", 39.90);
+        Pelicula ep7 = new Pelicula("Star Wars Episodio VII: El Despertar de la Fuerza", "J.J. Abrams", 136, "Ciencia Ficcion", "El terrible y enigmático guerrero Kylo Ren ha reunido un ejército de leales al Imperio, que se hace llamar la Primera Orden y ataca a la Alianza.", 34.90);
+        Pelicula ep8 = new Pelicula("Star Wars Episodio VIII: Los Ultimos Jedi", "Rian Johnson", 152, "Ciencia Ficcion", "Rey se encuentra lejos, intentando convencer a Luke Skywalker de que la entrene y la convierta en la última Jedi.", 30.0);
+        Pelicula ep9 = new Pelicula("Star Wars Episodio IX: El Ascenso de Skywalker", "J.J Abrams", 142, "Ciencia Ficcion", "Finn y Poe guían a la Resistencia para detener los planes de la Primera Orden para formar un nuevo imperio, mientras Rey anticipa un enfrentamiento inevitable con Kylo Ren.", 30.0);
         Pelicula rogueOne = new Pelicula("Rogue One: Una Historia de Star Wars", "Gareth Edwards", 133, "Accion", "Un grupo de rebeldes roba los planos de la estrella de la muerte.", 29.90);
 
         this.agregarProducto(ep1);
@@ -90,22 +93,42 @@ public class Catalogo{
         this.agregarProducto(ep4);
         this.agregarProducto(ep5);
         this.agregarProducto(ep6);
+        this.agregarProducto(ep7);
+        this.agregarProducto(ep8);
+        this.agregarProducto(ep9);
         this.agregarProducto(rogueOne);
 
         ArrayList<ComponenteRockBuster> precuelas = new ArrayList<>();
         precuelas.add(ep1);
         precuelas.add(ep2);
         precuelas.add(ep3);
-        Saga trilogiaPrecuelas = new Saga("Saga: Trilogia de Precuelas", "George Lucas", "Ciencia Ficcion", "Las tres peliculas que cuentan la caida de la Republica.", precuelas);
+        Saga trilogiaPrecuelas = new Saga("Saga: Trilogia de Precuelas de Star Wars", "George Lucas", "Ciencia Ficcion", "Las tres peliculas que cuentan la caida de la Republica.", precuelas);
 
         ArrayList<ComponenteRockBuster> original = new ArrayList<>();
         original.add(ep4);
         original.add(ep5);
         original.add(ep6);
-        Saga trilogiaOriginal = new Saga("Saga: Trilogia Original", "George Lucas", "Ciencia Ficcion", "La trilogia clasica que empezo todo.", original);
+        Saga trilogiaOriginal = new Saga("Saga: Trilogia Original de Star Wars", "George Lucas, Irvin Kershner, Richard Marquand", "Ciencia Ficcion", "La trilogia clasica que empezo todo.", original);
+
+        ArrayList<ComponenteRockBuster> secuelas = new ArrayList<>();
+        secuelas.add(ep7);
+        secuelas.add(ep8);
+        secuelas.add(ep9);
+        Saga trilogiaSecuelas = new Saga("Saga: Trilogia de Secuelas de Star Wars", "J.J. Abrams y Rian Johnson", "Ciencia Ficcion", "Una nueva generación de héroes y la Resistencia se alzan contra la tiránica Primera Orden, mientras la chatarrera Rey y el corrompido Kylo Ren se disputan el destino de la Fuerza.", secuelas);
+
+        ArrayList<ComponenteRockBuster> universoStarWars = new ArrayList<>();
+        universoStarWars.add(trilogiaPrecuelas);
+        universoStarWars.add(rogueOne);
+        universoStarWars.add(trilogiaOriginal);
+        universoStarWars.add(trilogiaSecuelas);
+
+        Saga starWars = new Saga("Saga: Universo Star Wars", "George Lucas, Irvin Kershner, Richard Marquand, Gareth Edwards, J.J. Abrams y Rian Johnson",
+        "Ciencia Ficcion","Todas las historias del universo Star Wars de principio a fin.", universoStarWars);
 
         this.agregarProducto(trilogiaPrecuelas);
         this.agregarProducto(trilogiaOriginal);
+        this.agregarProducto(trilogiaSecuelas);
+        this.agregarProducto(starWars);
 
         DiscoMusical disco1 = new DiscoMusical("The Dark Side of the Moon", "Pink Floyd", "Rock Progresivo", 1973, 15.99);
         DiscoMusical disco2 = new DiscoMusical("Thriller", "Michael Jackson", "Pop", 1982, 14.50);
