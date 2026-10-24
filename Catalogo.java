@@ -1,22 +1,46 @@
 import java.util.ArrayList;
 
+/**
+ * Aqui se guardan todos los productos de RockBuster en una sola lista: peliculas,
+ * sagas y discos de musica. Tambien sabe responder lo que un cliente quiere
+ * consultar, como buscar por genero o por precio.
+ */
 public class Catalogo{
 
+    /**Lista donde viven todos los productos de la tienda. */
     private ArrayList<ComponenteRockBuster> productos;
 
+    /**
+     * Crea el catalogo y lo llena de una vez con los productos de la tienda.
+     */
     public Catalogo(){
         this.productos = new ArrayList<>();
         this.cargarProductos();
     }
 
+    /**
+     * Mete un producto nuevo al catalogo. Sirve igual para una pelicula, una saga
+     * o un disco, porque para el catalogo todos son lo mismo.
+     * @param producto el producto que se quiere agregar.
+     */
     public void agregarProducto(ComponenteRockBuster producto){
         this.productos.add(producto);
     }
 
+    /**
+     * Entrega la lista con todos los productos de la tienda.
+     * @return todos los productos del catalogo.
+     */
     public ArrayList<ComponenteRockBuster> getProductos(){
         return productos;
     }
 
+    /**
+     * Busca los productos que son de un genero. Da igual si el genero se escribe
+     * con mayusculas o minusculas.
+     * @param genero el genero que se esta buscando.
+     * @return los productos que son de ese genero.
+     */
     public ArrayList<ComponenteRockBuster> filtrarPorGenero(String genero){
         ArrayList<ComponenteRockBuster> encontrados = new ArrayList<>();
 
@@ -29,6 +53,11 @@ public class Catalogo{
         return encontrados;
     }
 
+    /**
+     * Busca los productos que cuestan lo mismo o menos que una cantidad.
+     * @param costoMaximo lo maximo que el cliente quiere pagar.
+     * @return los productos que cuestan ese precio o menos.
+     */
     public ArrayList<ComponenteRockBuster> filtrarPorCostoMaximo(double costoMaximo){
         ArrayList<ComponenteRockBuster> encontrados = new ArrayList<>();
 
@@ -41,6 +70,11 @@ public class Catalogo{
         return encontrados;
     }
 
+    /**
+     * Junta los generos que hay en la tienda, sin repetir ninguno. Sirve para
+     * mostrarle al cliente las opciones que puede elegir al filtrar por genero.
+     * @return la lista de generos disponibles, tanto de peliculas como de discos.
+     */
     public ArrayList<String> getGenerosDisponibles(){
         ArrayList<String> generos = new ArrayList<>();
 
@@ -62,6 +96,11 @@ public class Catalogo{
         return generos;
     }
 
+    /**
+     * Imprime una lista de productos con un numero, su nombre y su precio. Asi el
+     * cliente puede escoger uno despues para ver todos sus datos.
+     * @param listaProductos los productos que se quieren mostrar.
+     */
     public void imprimirLista(ArrayList<ComponenteRockBuster> listaProductos){
         if(listaProductos.isEmpty()){
             System.out.println("No se encontraron productos.");
@@ -74,6 +113,12 @@ public class Catalogo{
         }
     }
 
+    /**
+     * Crea los productos de la tienda y los mete al catalogo: primero las peliculas
+     * sueltas, luego las sagas armadas con esas peliculas (incluida una saga grande
+     * que junta a otras sagas y peliculas) y al final los discos de musica, que se
+     * meten con su adaptador para que el catalogo los trate igual.
+     */
     private void cargarProductos(){
 
         Pelicula ep1 = new Pelicula("Star Wars Episodio I: La Amenaza Fantasma", "George Lucas", 136, "Ciencia Ficcion", "Un joven esclavo descubre que puede ser el elegido que traera equilibrio a la Fuerza.", 34.90);
